@@ -625,31 +625,3 @@ header p {
         text-align: center;
     }
 }
-/* 降ってくる星のスタイル */
-/* 降ってくる星のスタイル */
-.falling-star {
-    position: fixed;
-    top: -20px;
-    color: #fff;
-    pointer-events: none;
-    z-index: 0; /* マイナスにせず、1にする */
-    animation: fall linear forwards;
-    text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px #c084fc;
-}
-
-@keyframes fall {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(105vh) rotate(360deg);
-        opacity: 0;
-    }
-}
