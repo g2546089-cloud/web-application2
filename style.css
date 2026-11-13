@@ -1,17 +1,12 @@
-html {
-    background-color: #071127;
-    height: 100%;
-}
-
 body {
     font-family: sans-serif;
-    background: linear-gradient(135deg, #071127 0%, #161026 50%, #090a10 100%);
-    background-attachment: fixed;
+    /* 夜空の深みを表現する綺麗なネオンカラーのグラデーション */
+    background: linear-gradient(135deg, #071127);
+    background-attachment: fixed; /* 画面をスクロールしても背景を固定する */
     color: #f1f2f6;
     margin: 0;
     padding: 20px;
     min-height: 100vh;
-    min-height: 100dvh;
     overflow-x: hidden;
 }
 
@@ -624,4 +619,16 @@ header p {
         align-items: center;
         text-align: center;
     }
+}
+
+body {
+    font-family: sans-serif;
+    background: linear-gradient(135deg, #071127 0%, #161026 50%, #090a10 100%);
+    background-attachment: fixed;
+    color: #f1f2f6;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
 }
