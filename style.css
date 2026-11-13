@@ -1,0 +1,655 @@
+html {
+    background-color: #071127;
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    background: linear-gradient(135deg, #071127 0%, #161026 50%, #090a10 100%);
+    background-attachment: fixed;
+    color: #f1f2f6;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+}
+
+.falling-star {
+    position: fixed;
+    top: -20px;
+    color: #fff;
+    pointer-events: none;
+    z-index: -1;
+    animation: fall linear forwards;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px #c084fc;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- フィルム風のログイン画面 --- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.login-card {
+    background-color: #181616;
+    color: #fff;
+    padding: 40px 45px;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 390px;
+    text-align: center;
+    position: relative;
+    background-image: 
+        linear-gradient(0deg, #ffffff 60%, transparent 60%),
+        linear-gradient(0deg, #ffffff 60%, transparent 60%);
+    background-repeat: repeat-y;
+    background-size: 8px 16px;
+    background-position: 12px 0, calc(100% - 20px) 0;
+}
+
+.login-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.login-card h2 {
+    margin: 0 0 5px 0;
+    color: #f1f2f6;
+}
+
+.login-card p {
+    font-size: 0.85rem;
+    color: #a4b0be;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ced6e0;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background: #2f3542;
+    border: 1px solid #57606f;
+    color: #fff;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+}
+
+.error-msg {
+    color: #ff7675;
+    font-size: 0.85rem;
+    min-height: 20px;
+    margin-bottom: 10px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #02459e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 0 15px rgb(73, 125, 237), inset 0 0 15px rgba(192, 132, 252, 0.1);
+}
+
+.login-btn:hover {
+    background: #136adb;
+}
+
+/* --- メイン画面ヘッダー --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto 25px auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+header p {
+    margin: 4px 0 0 0;
+    color: #a4b0be;
+    font-size: 0.9rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-display {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #dfe4ea;
+}
+
+.logout-btn {
+    background: #2f3542;
+    border: 1px solid #57606f;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #f1f2f6;
+}
+
+.logout-btn:hover {
+    background: #ff7675;
+    border-color: #ff7675;
+}
+
+/* --- 映画追加フォーム（ネオン看板風） --- */
+.add-movie-section {
+    max-width: 1000px;
+    margin: 0 auto 25px auto;
+}
+
+.add-form {
+    background: #1a1a2e;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #fafaf7;
+    box-shadow: 0 0 15px rgb(253, 253, 254), inset 0 0 15px rgba(192, 132, 252, 0.1);
+}
+
+.add-form h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.05rem;
+    color: #f3e8ff;
+    text-shadow: 0 0 10px rgba(252, 251, 252, 0.6);
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.form-row input, .form-row select, .form-row textarea {
+    width: 100%;
+    padding: 10px;
+    background: #2f3542;
+    border: 1px solid #57606f;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+.add-btn {
+    width: 100%;
+    background: #5fccff6c;
+    color: white;
+    border: 2px solid #4fc8fc;
+    padding: 11px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.add-btn:hover {
+    background: #40d2fb;
+    box-shadow: 0 0 12px rgb(160, 250, 253);
+}
+
+/* 写真選択ボタン */
+.file-upload-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #2f3542;
+    border: 1px dashed #c084fc;
+    color: #f3e8ff;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.file-upload-btn:hover {
+    background: #3b4252;
+    border-color: #e879f9;
+}
+
+.preview-container {
+    position: relative;
+    width: 80px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+#image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #c084fc;
+}
+
+.remove-img-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #ff7675;
+    color: white;
+    border: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- にょきっと出てくるドロップダウンメニュー --- */
+.dropdown-container {
+    position: relative;
+    max-width: 280px;
+    margin: 0 auto 25px auto;
+    z-index: 100;
+}
+
+.dropdown-btn {
+    width: 100%;
+    background: #1a1a2e;
+    border: 2px solid #cbfcfe;
+    color: #f3e8ff;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 12px rgba(162, 242, 253, 0.5);
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.dropdown-btn:hover {
+    box-shadow: 0 0 18px rgba(138, 237, 254, 0.9);
+    background: #231942;
+}
+
+.dropdown-arrow {
+    font-size: 0.75rem;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dropdown-container.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background: rgba(20, 20, 36, 0.95);
+    backdrop-filter: blur(8px);
+    border: 2px solid #d7fdfe;
+    border-radius: 16px;
+    padding: 6px;
+    margin: 0;
+    list-style: none; /* ★ここで点々を確実に消しています */
+    box-sizing: border-box;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(192, 132, 252, 0.4);
+
+    opacity: 0;
+    transform: translateY(-10px) scaleY(0.8);
+    transform-origin: top center;
+    pointer-events: none;
+    transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dropdown-container.open .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+    pointer-events: auto;
+}
+
+.filter-option {
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, padding-left 0.15s;
+}
+
+.filter-option:hover {
+    background: rgba(159, 245, 254, 0.25);
+    color: #fff;
+    padding-left: 18px;
+}
+
+.filter-option.active {
+    background: #d7fdfe;
+    color: #121212;
+    font-weight: bold;
+}
+
+/* --- ネオン劇場風・チケット型カード --- */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.movie-card {
+    background-color: #1a1a2e;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 20px 25px 20px 35px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15), inset 0 0 15px rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.ticket-main {
+    flex-grow: 1;
+    padding-right: 20px;
+    border-right: 4px dotted rgba(255, 255, 255, 0.4);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0 0 6px 0;
+    color: #f1c40f;
+    letter-spacing: 0.5px;
+}
+
+.card-date {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    margin-bottom: 6px;
+}
+
+.card-rating {
+    color: #f39c12;
+    font-size: 0.85rem;
+}
+
+.ticket-stub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 18px;
+    min-width: 65px;
+}
+
+.ticket-stub-text {
+    font-size: 0.65rem;
+    color: #d4af37;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.ticket-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.fav-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 2px;
+    transition: transform 0.2s;
+    filter: grayscale(100%) opacity(0.5);
+}
+
+.fav-btn.is-fav {
+    filter: none;
+    transform: scale(1.15);
+    text-shadow: 0 0 8px rgba(255, 107, 129, 0.8);
+}
+
+.fav-btn:hover {
+    transform: scale(1.25);
+}
+
+.delete-btn {
+    background: transparent;
+    border: 1px solid #ff7675;
+    color: #ff7675;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ff7675;
+    color: white;
+}
+
+.movie-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px currentColor, 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* 🎨 ネオンカラー設定 */
+.ticket-navy { background-color: #0f172a; border-color: #38bdf8; color: #38bdf8; }
+.ticket-red { background-color: #2a0f13; border-color: #fb7185; color: #fb7185; }
+.ticket-green { background-color: #062318; border-color: #34d399; color: #34d399; }
+.ticket-purple { background-color: #160623; border-color: #c38afc; color: #c38afc; }
+.ticket-orange { background-color: #2e2110; border-color: #fc990e; color: #f9af47; }
+.ticket-pink { background-color: #2e102c; border-color: #fd8ff4; color: #fd8ff4; }
+
+/* --- ノート詳細モーダル --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.notebook-page {
+    background: #212234;
+    color: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    position: relative;
+    border: 1px solid #e3dec3;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: #f0da5c;
+    border: none;
+    font-size: 1.2rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    transition: background 0.2s;
+}
+
+.close-btn:hover { background: #ddd; }
+
+.notebook-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.modal-poster {
+    width: 140px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.modal-details { flex-grow: 1; }
+
+#modal-title {
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+    color: #fcfdfe;
+}
+
+.modal-date-label {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin: 0 0 8px 0;
+}
+
+.modal-rating {
+    font-size: 1rem;
+    color: #f39c12;
+    margin-bottom: 12px;
+}
+
+.notebook-line {
+    border: none;
+    border-top: 1px dashed #dcd6ad;
+    margin: 12px 0;
+}
+
+.modal-memo {
+    font-size: 0.9rem;
+    color: #f4f5f9;
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+/* --- ポップコーン演出 --- */
+.popcorn-particle {
+    position: fixed;
+    pointer-events: none;
+    font-size: 1.8rem;
+    z-index: 9999;
+    user-select: none;
+    animation: pop-animation 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes pop-animation {
+    0% { opacity: 1; transform: translate(0, 0) scale(0.5) rotate(0deg); }
+    50% { opacity: 1; transform: translate(var(--dx), var(--dy)) scale(1.4) rotate(360deg); }
+    100% { opacity: 0; transform: translate(var(--dx), calc(var(--dy) + 50px)) scale(0.8) rotate(720deg); }
+}
+
+@media (max-width: 500px) {
+    .notebook-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+/* 降ってくる星のスタイル */
+/* 降ってくる星のスタイル */
+.falling-star {
+    position: fixed;
+    top: -20px;
+    color: #fff;
+    pointer-events: none;
+    z-index: 0; /* マイナスにせず、1にする */
+    animation: fall linear forwards;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px #c084fc;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
